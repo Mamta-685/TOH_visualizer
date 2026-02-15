@@ -39,7 +39,7 @@ def toh(n, A, B, C, state, moves):
 
 @app.route("/solve")
 def solve():
-    n = int(request.args.get("n", 3))
+    n = int(request.args.get("n"))
 
     state = {
         "A": list(range(n, 0, -1)),
