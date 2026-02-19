@@ -105,11 +105,13 @@ function createDisks(n) {
 function startAnimation() {
   let n = document.getElementById("diskInput").value;
 
-  fetch(`/solve?n=${n}`)
+  fetch(`/solve?n=${n}`) //GET /solve?n=3 : browser will send a request (calling app.py's solve function) (app.py ends there completely after returning the JSON response)
+  
+  //Response
     .then(res => res.json())
     .then(data => {
-      createDisks(data.n);
-      animateMoves(data.moves);
+      createDisks(data.n); //First create disks 
+      animateMoves(data.moves);// Second animate moves
     });
 }
 
@@ -125,14 +127,15 @@ function animateMoves(moves) {
     let move = moves[i];
     moveDisk(move.from, move.to);
 
-    document.getElementById("stepNum").textContent = i + 1;
+    document.getElementById("stepNum").textContent = i + 1;  //steps number
     document.getElementById("moveInfo").textContent =
-      `Move from ${move.from} → ${move.to}`;
+      `Move from ${move.from} → ${move.to}`;  //Moves info
 
     i++;
-  }, 800);
+  },800);
 }
 
+// DOM manipulation = visual movement.
 function moveDisk(from, to) {
   let disk = rods[from].lastElementChild;
   rods[to].appendChild(disk);
