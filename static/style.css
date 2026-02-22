@@ -1,27 +1,227 @@
-#game {
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-end;
-  height: 300px;
-  margin-top: 50px;
+
+.main-heading {
+  position: absolute;
+  top: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 4.8em;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 2px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  /* text-shadow: 0 0 24px #43889fec, 0 0 8px #ffffff2e; */
+  background: linear-gradient(90deg, #00ccff 0%, #ff008ce3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  z-index: 10;
+  margin-bottom: 0;
 }
 
-.rod {
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #000000 0%, #000000 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.background-gradient {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-card {
+  background: #000000;
+  border-radius: 24px;
+  box-shadow: 0 0 32px #00ffee70, 0 0 8px #ff008c;
+  padding: 40px 32px 32px 32px;
+  min-width: 420px;
+  max-width: 95vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+
+.top-bar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+
+#diskInput {
+  background: linear-gradient(90deg, #00f2ff89 0%, #ff1e8f 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 1.1em;
+  box-shadow: 0 0 8px 2px #088ca0;
+  outline:#000000;
+  transition: box-shadow 0.3s;
+  margin-right: 16px;
+}
+
+#diskInput:focus {
+  box-shadow: 0 0 12px 4px #3fe4e4b8;
+}
+ 
+
+#startBtn {
+  background: linear-gradient(90deg, #00f2ff89 0%, #ff1e8f 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-size: 1.1em;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 0 12px 2px #ff006aef;
+  transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
+}
+
+#startBtn:hover {
+  background: linear-gradient(90deg, #00a9dd9e 0%, #2a52986c 100%);
+  box-shadow: 0 0 24px 6px #ff00aa60;
+  transform: scale(1.05);
+}
+
+
+  .move-step-counter-container {
+  display: flex;
+  flex-direction: column;   /* stack vertically */
+  align-items: center;
+  gap: 8px;
+
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: 600;
+  margin-top: 24px;
+  letter-spacing: 1px;
+  text-shadow: 0 0 8px #2a5298;
+} 
+
+
+.step-line {
+  color: #4fc3f7;   /* highlight steps */
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+.move-line {
+  opacity: 0.9;
+}
+
+.rods-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  margin: 0 auto 24px auto;
+  max-width: 700px;
+  gap: 48px;
+}
+
+
+.rod-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 120px;
-  height: 250px;
-  border: 2px solid black;
+}
+ 
+
+.rod {
+  width: 12px;
+  height: 220px;
+  background: linear-gradient(180deg, #e43f5acc 0%, #ff0080cc 100%);
+  /* box-shadow: 0 0 16px 4px #e43f5a, 0 0 8px 2px #ff0080; */
+  border-radius: 8px;
+  margin-bottom: 8px;
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
+  position: relative;
+  z-index: 2;
 }
+
+
+.rod-base {
+  width: 80px;
+  height: 16px;
+  background: #212d45;
+  border-radius: 8px 8px 16px 16px;
+  /* box-shadow: 0 0 12px 2px #2a5298; */
+  margin-bottom: 8px;
+  z-index: 1;
+}
+
+
+.rod-label {
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: 600;
+  margin-top: 4px;
+  letter-spacing: 2px;
+  text-shadow: 0 0 8px #e43f5a;
+}
+
+
 
 .disk {
-  height: 20px;
-  margin: 3px 0;
-  background: steelblue;
-  border-radius: 4px;
+  height: 24px;
+  margin: 4px 0;
+  background: linear-gradient(90deg, #05a5cd 0%, #1e90ff 100%);
+  border-radius: 12px;
+  box-shadow: 0 0 12px 2px #83c1ff56;
+  color: #fff;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 0.4s cubic-bezier(.68,-0.55,.27,1.55), background 0.3s, box-shadow 0.3s;
+}
+ 
+
+.disk.active {
+  outline: 3px solid #e43f5a;
+  box-shadow: 0 0 24px 6px #e43f5a;
 }
 
-.active {
-  outline: 3px solid orange;
+.min-moves-container {
+  color: #fff;
+  font-size: 1.1em;
+  font-weight: 500;
+  margin-top: 16px;
+  text-align: center;
+  text-shadow: 0 0 8px #2a5298;
+}
+
+@media (max-width: 700px) {
+  .game-card {
+    min-width: 0;
+    padding: 16px 4vw 16px 4vw;
+  }
+  .rods-container {
+    max-width: 95vw;
+  }
+  .rod-group {
+    width: 28vw;
+    min-width: 60px;
+    max-width: 120px;
+  }
 }

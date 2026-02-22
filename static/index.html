@@ -3,48 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tower Of Hanoi Visualizer</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <!-- second -->
     <div class="controls">
-      <!-- <input type="number" id="diskInput" min="1" max="6" value="3" /> -->
-       <!-- <input type="number" id="diskInput" value="3" disabled> -->
-        <input type="number" id="diskInput" value="3" min="1">
+      
+    <div class="background-gradient">
+      <h1 class="main-heading">Tower of Hanoi Visualizer</h1>
+      <div class="game-card">
+        <div class="top-bar">
+          <input type="number" id="diskInput" value="3" min="1" max="8" />
+          <button id="startBtn" onclick="startAnimation()">Start</button>
+        </div>
+        
+        <div class="rods-container">
+          <div class="rod-group">
+            <div class="rod" id="A"></div>
+            <div class="rod-base"></div>
+            <div class="rod-label">A</div>
+          </div>
+          <div class="rod-group">
+            <div class="rod" id="B"></div>
+            <div class="rod-base"></div>
+            <div class="rod-label">B</div>
+          </div>
+          <div class="rod-group">
+            <div class="rod" id="C"></div>
+            <div class="rod-base"></div>
+            <div class="rod-label">C</div>
+          </div>
+        </div>
+        <div class="move-step-counter-container">
+  <div class="step-line">
+    Steps: <span id="stepNum">0</span>
+  </div>
 
-
-      <!-- <button id="startBtn">Start</button> --><button onclick="startAnimation()">Start</button>
-
-    </div>
-
-    <div id="info">
-  Step: <span id="stepNum">0</span><br>
-  Move: <span id="moveInfo">-</span>
+  <div class="move-line">
+    Moves: <span id="moveCounter">0</span>
+  </div>
 </div>
 
-
-    <!-- first -->
-    <div id="game">
-      <div class="rod" id="A"></div>
-      <div class="rod" id="B"></div>
-      <div class="rod" id="C"></div>
+        
+      </div>
     </div>
-
     <script>
       let DISK_COUNT = null;
     </script>
+    <script src="script.js"></script>
 
-    <script src="script.js" ></script>
-</body>
-</html>
-
-
-<!-- so, everytime i enter the input , moves overlap in json file .. it isn't getting reset. and that's why need Flask here! -->
-
-<!--  **Flow**
-User enters n
+<!-- User enters n
 ↓
 Browser sends n to Flask
 ↓
@@ -52,4 +62,4 @@ Flask runs Tower of Hanoi (Python recursion)
 ↓
 Flask returns JSON moves
 ↓
-JavaScript animates them -->
+JavaScript animates them --> 
