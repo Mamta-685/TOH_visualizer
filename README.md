@@ -6,18 +6,18 @@ This project demonstrates recursion, algorithm visualization, and dynamic DOM ma
 
 ---
 
-## 🚀 Features
+##  Features
 
-- 🎯 User input for number of disks
-- 🔁 Recursive Tower of Hanoi solution
-- 🎬 Step-by-step disk animation
-- 📊 Live step and move counter
-- 🌙 Modern neon-themed UI
-- ⚡ Smooth frontend animation logic
+-  User input for number of disks
+-  Recursive Tower of Hanoi solution
+-  Step-by-step disk animation
+-  Live step and move counter
+-  Modern neon-themed UI
+-  Smooth frontend animation logic
 
 ---
 
-## 🧠 Algorithm
+##  Algorithm
 
 The Tower of Hanoi follows a recursive pattern:
 
@@ -33,7 +33,7 @@ Minimum number of moves required:
 
 ---
 
-## 🏗️ Tech Stack
+##  Tech Stack
 
 ### 🔹 Backend
 - Python
@@ -46,22 +46,6 @@ Minimum number of moves required:
 
 ---
 
-## 📂 Project Structure
-
----
-
-## 🏗️ Tech Stack
-
-### 🔹 Backend
-- Python
-- Flask
-
-### 🔹 Frontend
-- HTML
-- CSS
-- JavaScript (DOM manipulation & animation)
-
----
 
 ## 📂 Project Structure
 
@@ -80,7 +64,7 @@ TOH_visualizer/
 ```
 ---
 
-## ⚙️ How It Works
+##  How It Works
 
 - Flask handles routing and backend logic.
 - Recursive algorithm generates disk moves.
@@ -99,64 +83,42 @@ This separation keeps backend logic clean and frontend interactive.
 ```bash
 git clone https://github.com/your-username/TOH_visualizer.git
 cd TOH_visualizer
----
 ```
-## ⚙️ How It Works
+### 2️⃣ Install dependencies
+```pip install flask```
 
-- Flask handles routing and backend logic.
-- Recursive algorithm generates disk moves.
-- JavaScript dynamically creates disks.
-- DOM manipulation animates disk movement.
-- UI updates steps and move counter in real-time.
+### 3️⃣ Run the application
+```python app.py```
 
-This separation keeps backend logic clean and frontend interactive.
+### 4️⃣ Open in browser
+```http://127.0.0.1:5000```
 
----
+## Learning Outcomes
 
-## 🖥️ How to Run Locally
+- Understanding recursion deeply
 
-### 1️⃣ Clone the repository
+- Visualizing algorithm execution
 
-```bash
-git clone https://github.com/your-username/TOH_visualizer.git
-cd TOH_visualizer
-2️⃣ Install dependencies
-pip install flask
-3️⃣ Run the application
-python app.py
-4️⃣ Open in browser
-http://127.0.0.1:5000
-```
+- Integrating Flask with frontend JavaScript
 
-🎯 Learning Outcomes
+- DOM manipulation & animation
 
-Understanding recursion deeply
+- UI/UX design principles
 
-Visualizing algorithm execution
+- Full-stack project structure
 
-Integrating Flask with frontend JavaScript
+## Future Improvements
 
-DOM manipulation & animation
+- Shift more logic to backend API
 
-UI/UX design principles
+- Convert to API-driven architecture
 
-Full-stack project structure
+- Add manual play mode
 
-🔮 Future Improvements
+- Add pause/resume animation
 
-Shift more logic to backend API
+- Deploy on cloud (Render / Railway / AWS)
 
-Convert to API-driven architecture
+- Add time complexity visual indicator
 
-Add manual play mode
 
-Add pause/resume animation
-
-Deploy on cloud (Render / Railway / AWS)
-
-Add time complexity visual indicator
-
-📌 Author
-
-Mamta
-B.Tech CSE (AI)
