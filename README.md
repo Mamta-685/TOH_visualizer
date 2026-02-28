@@ -55,10 +55,8 @@ TOH_visualizer/
 ├── static/
 │   ├── style.css
 │   └── script.js
-│
-├── templates/
 │   └── index.html
-│
+|
 ├── app.py
 └── README.md
 ```
